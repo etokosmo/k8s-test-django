@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: django-config
+  labels:
+    app.kubernetes.io/name: django-app
+    app.kubernetes.io/instance: web
+data:
+  DATABASE_URL: "postgres://myuser:mypass@172.17.0.4:5432/mydb"
+  SECRET_KEY: "aaa"
+  ALLOWED_HOSTS: "192.168.59.107,star-burger.test"
+  DEBUG: "False"
